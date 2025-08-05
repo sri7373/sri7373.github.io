@@ -17,10 +17,13 @@
       --card-dark: #2c2c3e;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      display: flex;
       background-color: var(--bg-light);
       color: var(--text-light);
       transition: all 0.3s;
@@ -38,6 +41,8 @@
       flex-direction: column;
       padding: 2em 1em;
       box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: transform 0.3s ease;
     }
 
     nav h2 {
@@ -69,6 +74,21 @@
       font-weight: 600;
     }
 
+    #menuToggle {
+      display: none;
+      position: fixed;
+      top: 1em;
+      left: 1em;
+      z-index: 1100;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.6em 1em;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
     .container {
       margin-left: 240px;
       padding: 2em;
@@ -81,6 +101,7 @@
       align-items: center;
       gap: 2em;
       margin-bottom: 2em;
+      flex-wrap: wrap;
     }
 
     header img {
@@ -140,20 +161,45 @@
     .dark-mode li {
       background-color: var(--card-dark);
     }
+
+    @media (max-width: 768px) {
+      nav {
+        transform: translateX(-100%);
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        padding-top: 4em;
+      }
+
+      nav.active {
+        transform: translateX(0);
+      }
+
+      #menuToggle {
+        display: block;
+      }
+
+      .container {
+        margin-left: 0;
+        padding: 5em 1.5em 2em;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
+  <button id="menuToggle"><i class="fas fa-bars"></i> Menu</button>
+
+  <nav id="sidebar">
     <h2>Portfolio</h2>
     <a href="#about"><i class="fas fa-user"></i> About</a>
     <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-    <a href="#professional-experience"><i class="fas fa-briefcase"></i> Professional Experience</a>
+    <a href="#professional-experience"><i class="fas fa-briefcase"></i> Experience</a>
     <a href="#leadership"><i class="fas fa-chess-king"></i> Leadership</a>
     <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
     <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
-    <a href="#achievements"><i class="fas fa-trophy"></i> Achievements and Awards</a>
+    <a href="#achievements"><i class="fas fa-trophy"></i> Awards</a>
     <a href="#competitions"><i class="fas fa-medal"></i> Competitions</a>
-    <a href="#volunteering"><i class="fas fa-hands-helping"></i> Volunteering Experience</a>
+    <a href="#volunteering"><i class="fas fa-hands-helping"></i> Volunteering</a>
     <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
     <button class="toggle-mode" onclick="toggleDarkMode()">Toggle Mode</button>
   </nav>
@@ -262,6 +308,13 @@
   </div>
 
   <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const sidebar = document.getElementById("sidebar");
+
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
     }

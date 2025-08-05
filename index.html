@@ -5,52 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Srividya Ravi Sivashankar - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --bg-light: #f0f4f8;
+      --bg-dark: #1e1e2f;
+      --text-light: #1a1a1a;
+      --text-dark: #f5f5f5;
+      --primary: #4a90e2;
+      --card-light: #fff;
+      --card-dark: #2c2c3e;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f0f4f8;
-      color: #1a1a1a;
+      display: flex;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 220px;
+      background-color: var(--primary);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 2em 1em;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav h2 {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0.8em 0;
+      display: flex;
+      align-items: center;
+      font-size: 1em;
+    }
+
+    nav a i {
+      margin-right: 0.6em;
+    }
+
+    .container {
+      margin-left: 240px;
+      padding: 2em;
+      max-width: 900px;
+      width: 100%;
     }
 
     header {
-      background: linear-gradient(135deg, #4a90e2, #6eb1f7);
-      color: white;
-      text-align: center;
-      padding: 3em 1em;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      margin-bottom: 2em;
     }
 
     header img {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      width: 180px;
-      height: 180px;
       object-fit: cover;
-      margin-bottom: 1em;
-      border: 5px solid white;
+      border: 4px solid var(--primary);
     }
 
-    h1 {
-      margin: 0.2em 0;
-      font-size: 2.5em;
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
     }
 
-    p {
+    header p {
       margin: 0.5em 0;
     }
 
     section {
-      padding: 3em 1.5em;
-      max-width: 1000px;
-      margin: auto;
+      margin-bottom: 3em;
     }
 
     h2 {
-      color: #4a90e2;
-      border-bottom: 2px solid #dce3ea;
+      color: var(--primary);
+      border-bottom: 2px solid #ddd;
       padding-bottom: 0.3em;
-      margin-top: 2em;
     }
 
     ul {
@@ -58,124 +104,96 @@
       padding-left: 0;
     }
 
-    ul li {
-      background: white;
+    li {
+      background: var(--card-light);
       margin: 1em 0;
-      padding: 1.2em;
+      padding: 1.5em;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
 
-    ul li strong {
-      color: #2b5dab;
-      display: block;
+    li strong {
       font-size: 1.1em;
-      margin-bottom: 0.3em;
+      color: var(--primary);
     }
 
-    .section {
-      margin-bottom: 3em;
+    .toggle-mode {
+      margin-top: auto;
+      cursor: pointer;
+      background: white;
+      color: var(--primary);
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .dark-mode nav {
+      background-color: #333a;
+    }
+
+    .dark-mode li {
+      background-color: var(--card-dark);
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="photo_6294032796150251467_y.jpg" alt="Srividya Ravi Sivashankar" />
-    <h1>Srividya Ravi Sivashankar</h1>
-    <p>Year 2 Computer Science Student | Cybersecurity Enthusiast | Team Player</p>
-  </header>
+  <nav>
+    <h2>Portfolio</h2>
+    <a href="#about"><i class="fas fa-user"></i>About</a>
+    <a href="#leadership"><i class="fas fa-users"></i>Leadership</a>
+    <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
+    <button class="toggle-mode" onclick="toggleDarkMode()">Toggle Mode</button>
+  </nav>
 
-  <section>
-    <div class="section">
-      <h2>About Me</h2>
-      <p>Hello! I’m Srividya Ravi Sivashankar, a Computer Science student at Singapore Management University entering my second year. I chose this field because of my deep interest in technology and its potential to create meaningful impact.</p>
-      <p>I’m particularly drawn to cybersecurity and am actively exploring this and other specialisations to find the right fit. Beyond academics, I’m passionate about sports and appreciate the discipline, teamwork, and resilience it builds—values I carry into everything I do.</p>
-    </div>
+  <div class="container">
+    <header>
+      <img src="photo_6294032796150251467_y.jpg" alt="Srividya Ravi Sivashankar" />
+      <div>
+        <h1>Srividya Ravi Sivashankar</h1>
+        <p>Year 2 Computer Science Student | Cybersecurity Enthusiast | Team Player</p>
+        <a href="Srividya_Resume.pdf" download>Download Resume</a>
+      </div>
+    </header>
 
-    <div class="section">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Singapore Management University</strong> (Aug 2024 – Present): BSc in Computer Science, eGPA 3.44 / 4.0, Cum Laude (Distinction)</li>
-        <li><strong>Nanyang Junior College</strong> (Jan 2022 – Dec 2023): Achieved 4 Distinctions in the Singapore-Cambridge GCE 'A' Levels</li>
-        <li><strong>Clementi Town Secondary School</strong> (Jan 2018 – Dec 2021): Attained 8 Distinctions in the GCE 'O' Levels</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Professional Experience</h2>
-      <ul>
-        <li><strong>Sales Assistant, Nike Orchard</strong> (Jan 2024 – Mar 2024): Assisted customers, restocked merchandise, and supported daily store operations.</li>
-        <li><strong>Freelance Tutor</strong> (Mar 2024 – Present): Designed personalised lesson plans and improved a student’s 'O' Level E-Math grade from E8 to C5 within 3 months.</li>
-      </ul>
-    </div>
-
-    <div class="section">
+    <section id="leadership">
       <h2>Leadership Experience</h2>
       <ul>
-        <li><strong>Honorary General Secretary, SMU Varsity Football</strong> (2024 – Present)<br />Manage administrative duties including maintaining membership records and updating data in Excel. Part of the organising committee for DIVA, our signature 7-a-side women's futsal tournament open to the public. Liaised with sponsors via email and coordinated event logistics to ensure smooth execution.</li>
-        <li><strong>Robotics and Computing Club Trainer</strong> (2022)<br />Developed and delivered customised lesson plans to teach Python programming to beginners. Assisted students in debugging their code and completing in-session challenges.</li>
-        <li><strong>Class Chairperson</strong> (2021)<br />Maintained class discipline and ensured smooth execution of daily routines by coordinating closely with teachers and classmates.</li>
-        <li><strong>Chairperson, Recyclables Collection Project</strong> (2019)<br />Led my first community service project. Managed all administrative work, including contacting and onboarding external organisations. Coordinated logistics and briefed volunteers to ensure a smooth and successful event.</li>
+        <li>
+          <strong>Honorary General Secretary, SMU Varsity Football (2024 – Present)</strong>
+          Took charge of administrative duties including managing member databases and event records via spreadsheets. Coordinated with sponsors and external partners for DIVA — our flagship 7-a-side Women’s Futsal tournament open to the public — as part of the organizing committee.
+        </li>
+        <li>
+          <strong>Robotics and Computing Club Trainer (2022)</strong>
+          Designed and conducted beginner-friendly Python lessons for club members. Customized lesson plans, taught foundational concepts, and assisted with debugging and in-session coding challenges.
+        </li>
+        <li>
+          <strong>Class Chairperson (2021)</strong>
+          Maintained discipline and order in class. Ensured smooth execution of classroom activities and represented student concerns to school leadership.
+        </li>
+        <li>
+          <strong>Chairperson, Recyclables Collection Project (2019)</strong>
+          Led my first community service project. Managed administrative tasks, reached out to organizations, conducted briefings for volunteers, and oversaw the event’s smooth execution.
+        </li>
       </ul>
-    </div>
+    </section>
 
-    <div class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Programming Languages:</strong> C, Python, Java, SQL</li>
-        <li><strong>Languages:</strong> English, Tamil</li>
-      </ul>
-    </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: srividya@example.com</p>
+      <p>LinkedIn: linkedin.com/in/srividya</p>
+    </section>
+  </div>
 
-    <div class="section">
-      <h2>Certifications</h2>
-      <ul>
-        <li>Coursera Professional Cybersecurity Certificate</li>
-        <li>Red Hat System Administration I & II (v9.3) – In Progress</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Achievements and Awards</h2>
-      <ul>
-        <li>Edusave Certificate of Academic Achievement (2019)</li>
-        <li>Australian Mathematics Competition – Proficiency (2019)</li>
-        <li>Tamil Drama Competition – 1st Place (2020)</li>
-        <li>Edusave Scholarship – Top 10% (2020)</li>
-        <li>Subject Excellence Award – Humanities (2021)</li>
-        <li>Academic Excellence Award – 7 Distinctions (2021)</li>
-        <li>Education Merit Award – Top 10% (2022)</li>
-        <li>NUS Datathon (2025)</li>
-        <li>Singapore Sports Council Colours Award – Basketball (2023)</li>
-        <li>NYJC CCA Award – Basketball (2023)</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Competitions</h2>
-      <ul>
-        <li>NUS Datathon Participant (2025)</li>
-        <li>UnGPTable Challenge ESG Participant (2024)</li>
-        <li>IVP Basketball School Team (2025)</li>
-        <li>SUniG Basketball and Football School Teams (2024)</li>
-        <li>SportCares HEARTS Football League – 1st Place, Golden Boot Award (2024)</li>
-        <li>'A' Division Basketball – 1st Runner-Up (2023)</li>
-        <li>M1 Netball School Challenge League – 4th Place (2019)</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Volunteering Experience</h2>
-      <ul>
-        <li>Return Tray at Hawker Centre Project – Participant, 6 hours (2018)</li>
-        <li>Recyclables Collection Drive in Clementi – Participant, 11 hours (2019)</li>
-        <li>Secondary 3 VIA – Participant, 6 hours (2020)</li>
-        <li>UnLitter Red Dot w/ Habitat for Humanity – Chairperson, 13 hours (2021)</li>
-        <li>Various School/Student-Initiated Projects – Braddell Heights, Volleyball Finals, Bread Project, Walk for Rice, Heartware Network, Willing Hearts, and more (2022–2023)</li>
-        <li>Starring SMU Project – Supporting people with disabilities (2024)</li>
-        <li>SICS Purple Outreach – Supporting individuals with mental health challenges (2025)</li>
-      </ul>
-    </div>
-  </section>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>

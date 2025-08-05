@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Srividya Ravi Sivashankar - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
       --bg-light: #f0f4f8;
@@ -56,6 +56,17 @@
 
     nav a i {
       margin-right: 0.6em;
+    }
+
+    .toggle-mode {
+      margin-top: auto;
+      cursor: pointer;
+      background: white;
+      color: var(--primary);
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
     }
 
     .container {
@@ -117,17 +128,6 @@
       color: var(--primary);
     }
 
-    .toggle-mode {
-      margin-top: auto;
-      cursor: pointer;
-      background: white;
-      color: var(--primary);
-      padding: 0.5em 1em;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-    }
-
     .dark-mode {
       background-color: var(--bg-dark);
       color: var(--text-dark);
@@ -145,16 +145,16 @@
 <body>
   <nav>
     <h2>Portfolio</h2>
-    <a href="#about"><i class="fas fa-user"></i>About</a>
-    <a href="#education"><i class="fas fa-users"></i>Education</a>
-    <a href="#professional-experience"><i class="fas fa-users"></i>Professional Experience</a>
-    <a href="#leadership"><i class="fas fa-users"></i>Leadership</a>
-    <a href="#skills"><i class="fas fa-users"></i>Skills</a>
-    <a href="#certifications"><i class="fas fa-users"></i>Certifications</a>
-    <a href="#achievements"><i class="fas fa-users"></i>Achievements and Awards</a>
-    <a href="#competitions"><i class="fas fa-users"></i>Competitions</a>
-    <a href="#volunteering"><i class="fas fa-users"></i>Volunteering Experience</a>
-    <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+    <a href="#professional-experience"><i class="fas fa-briefcase"></i> Professional Experience</a>
+    <a href="#leadership"><i class="fas fa-chess-king"></i> Leadership</a>
+    <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
+    <a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a>
+    <a href="#achievements"><i class="fas fa-trophy"></i> Achievements and Awards</a>
+    <a href="#competitions"><i class="fas fa-medal"></i> Competitions</a>
+    <a href="#volunteering"><i class="fas fa-hands-helping"></i> Volunteering Experience</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
     <button class="toggle-mode" onclick="toggleDarkMode()">Toggle Mode</button>
   </nav>
 

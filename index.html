@@ -16,9 +16,20 @@
       color: white;
       padding: 2rem;
       text-align: center;
+      position: relative;
     }
     header h1 {
       margin: 0;
+    }
+    .profile-pic {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid white;
     }
     .container {
       max-width: 1000px;
@@ -56,6 +67,7 @@
 </head>
 <body>
   <header>
+    <img src="photo_6294032796150251467_y.jpg" alt="Srividya Photo" class="profile-pic" />
     <h1>Srividya Ravi Sivashankar</h1>
     <p>Computer Science Student | Cybersecurity Enthusiast | SMU Football HGS</p>
   </header>

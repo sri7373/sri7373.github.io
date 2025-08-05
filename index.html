@@ -16,20 +16,35 @@
       color: white;
       padding: 2rem;
       text-align: center;
-      position: relative;
     }
-    header h1 {
-      margin: 0;
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
     }
     .profile-pic {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      width: 100px;
-      height: 100px;
+      width: 50px;
+      height: 50px;
       object-fit: cover;
       border-radius: 50%;
       border: 2px solid white;
+      flex-shrink: 0;
+    }
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.2;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
     }
     .container {
       max-width: 1000px;
@@ -67,9 +82,13 @@
 </head>
 <body>
   <header>
-    <img src="photo_6294032796150251467_y.jpg" alt="Srividya Ravi Sivashankar" />
-    <h1>Srividya Ravi Sivashankar</h1>
-    <p>Computer Science Student | Cybersecurity Enthusiast | SMU Football HGS</p>
+    <div class="header-content">
+      <img src="photo_6294032796150251467_y.jpg" alt="Srividya Ravi Sivashankar" class="profile-pic" />
+      <div class="header-text">
+        <h1>Srividya Ravi Sivashankar</h1>
+        <p>Computer Science Student | Cybersecurity Enthusiast | SMU Football HGS</p>
+      </div>
+    </div>
   </header>
 
   <div class="container">
